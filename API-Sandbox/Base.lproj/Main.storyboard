@@ -75,11 +75,20 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75D-HZ-gS3">
+                                <rect key="frame" x="262" y="550" width="76" height="30"/>
+                                <state key="normal" title="New Movie"/>
+                                <connections>
+                                    <action selector="newMovie:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KhR-Wa-Unj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="75D-HZ-gS3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6jz-ts-PBe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Lg8-f5-yNi" secondAttribute="trailing" constant="20" id="8wD-Ta-qfa"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Lg8-f5-yNi" secondAttribute="bottom" constant="20" id="DPb-a9-oBW"/>
+                            <constraint firstAttribute="bottom" secondItem="75D-HZ-gS3" secondAttribute="bottom" constant="20" symbolic="YES" id="Ifa-wf-eNu"/>
                             <constraint firstItem="Lg8-f5-yNi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="U8n-wE-Qv1"/>
                             <constraint firstItem="Lg8-f5-yNi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="ZPz-fb-5mp"/>
                         </constraints>

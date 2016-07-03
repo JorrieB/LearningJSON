@@ -14,6 +14,7 @@ import AlamofireNetworkActivityIndicator
 
 class ViewController: UIViewController {
   
+
   @IBOutlet weak var movieTitleLabel: UILabel!
   @IBOutlet weak var rightsOwnerLabel: UILabel!
   @IBOutlet weak var releaseDateLabel: UILabel!
@@ -21,6 +22,7 @@ class ViewController: UIViewController {
   @IBOutlet weak var posterImageView: UIImageView!
   
   var displayMovie: Movie?
+  var topMovies: [Movie]?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -40,13 +42,11 @@ class ViewController: UIViewController {
           
           // Do what you need to with JSON here!
           // The rest is all boiler plate code you'll use for API requests
-          let movies = json["feed"]["entry"].arrayValue.map {
+          self.topMovies = json["feed"]["entry"].arrayValue.map {
             Movie(json: $0)
           }
           
-          self.displayMovie = movies[Int(arc4random_uniform(UInt32(movies.count)))]
-          self.populateGUI(movie: self.displayMovie!)
-          
+          self.displayRandomMovie()
           
         }
       case .Failure(let error):
@@ -67,12 +67,15 @@ class ViewController: UIViewController {
   }
   
   @IBAction func viewOniTunesPressed(sender: AnyObject) {
-    print("button pressed")
     if let displayMovie = displayMovie{
       UIApplication.sharedApplication().openURL(NSURL(string: "\(displayMovie.link)")!)
     } else {
       print("Movie has not yet loaded")
     }
+  }
+  
+  @IBAction func newMovie(sender: AnyObject) {
+    displayRandomMovie()
   }
   
   func populateGUI(movie movie:Movie){
@@ -82,6 +85,15 @@ class ViewController: UIViewController {
     priceLabel.text = "$\(movie.price)"
     loadPoster(movie.imageLoc)
 
+  }
+  
+  func displayRandomMovie(){
+    if let movies = topMovies{
+      self.displayMovie = movies[Int(arc4random_uniform(UInt32(movies.count)))]
+      self.populateGUI(movie: self.displayMovie!)
+    } else {
+      print("Movies have not yet been received from itunes")
+    }
   }
   
 }
