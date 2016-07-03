@@ -22,7 +22,7 @@ internal func exerciseOne() {
   // userData now contains a JSON object representing all the data in the JSON file.
   // This JSON file contains the same data as the tutorial example.
   let userData = JSON(data: jsonData)
-    
+  
   // Alright, now we have a JSON object from SwiftyJSON containing the user data!
   // Let's save the user's first name to a constant!
   
@@ -35,7 +35,7 @@ internal func exerciseOne() {
   let title = userData["results"][0]["name"]["title"].stringValue
   let email = userData["results"][0]["email"].stringValue
   let cellNumber = userData["results"][0]["cell"].stringValue
-
+  
   // Do you see what we did there? We navigated down the JSON heirarchy, asked for "results",
   // then the first dictionary value of that array, then the dictionary stored in "name",
   // then the value stored in "first". We  then told it that we wanted the value as a string.
@@ -80,7 +80,7 @@ internal func exerciseTwo() {
   
   // Uncomment this print statement when you are ready to check your code!
   
-      print("The top movie is \(topMovie.name) by \(topMovie.rightsOwner). It costs $\(topMovie.price) and was released on \(topMovie.releaseDate). You can view it on iTunes here: \(topMovie.link)")
+  print("The top movie is \(topMovie.name) by \(topMovie.rightsOwner). It costs $\(topMovie.price) and was released on \(topMovie.releaseDate). You can view it on iTunes here: \(topMovie.link)")
 }
 
 internal func exerciseThree() {
@@ -105,8 +105,23 @@ internal func exerciseThree() {
    Figure out a way to turn the allMoviesData array into Movie structs!
    
    */
-  var allMovies: [Movie] = []
   
+  //Iterative syntax
+  //  var allMovies: [Movie] = []
+  //  for movie in allMoviesData{
+  //    allMovies.append(Movie(json: movie))
+  //  }
+  
+  //Closure syntax
+  //  let allMovies: [Movie] = allMoviesData.map({
+  //    (json: JSON) -> Movie in
+  //    Movie(json: json)
+  //  })
+  
+  //Map syntax
+  let allMovies: [Movie] = allMoviesData.map {
+    Movie(json: $0)
+  }
   
   
   
@@ -117,9 +132,13 @@ internal func exerciseThree() {
    contains the `String` "Disney". Iterate over all the values in `allMovies` to check!
    
    */
-  //    print("The following movies are Disney movies...")
-  
-  
+  print("The following movies are Disney movies...")
+  let disneyMovies = allMovies.filter {
+    $0.rightsOwner.containsString("Disney")
+  }
+  for movie in disneyMovies{
+    print("\(movie.name)")
+  }
   
   
   /*
@@ -128,10 +147,13 @@ internal func exerciseThree() {
    movie that costs less than $15. Iterate over all the values in `allMovies` to check!
    
    */
-  //    print("The following movies are cost less than $15...")
-  
-  
-  
+  print("The following movies are cost less than $15...")
+  let cheapMovies = allMovies.filter {
+    $0.price < 15.00
+  }
+  for movie in cheapMovies{
+    print("\(movie.name)")
+  }
   
   /*
    
@@ -139,9 +161,11 @@ internal func exerciseThree() {
    each movie released in 2016. Iterate over all the values in `allMovies` to check!
    
    */
-  //    print("The following movies were released in 2016...")
-  
-  
-  
+  print("The following movies were released in 2016...")
+  for movie in allMovies{
+    if movie.releaseDate.containsString("2016"){
+      print("\(movie.name)")
+    }
+  }
   
 }

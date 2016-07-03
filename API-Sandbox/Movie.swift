@@ -23,4 +23,5 @@ struct Movie {
     self.link = json["id"]["label"].stringValue
     self.releaseDate = json["im:releaseDate"]["attributes"]["label"].stringValue
   }
+  
 }
