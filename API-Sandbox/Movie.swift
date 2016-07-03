@@ -10,17 +10,17 @@ import Foundation
 import SwiftyJSON
 
 struct Movie {
-    let name: String
-    let rightsOwner: String
-    let price: Double
-    let link: String
-    let releaseDate: String
-    
-    init(json: JSON) {
-        self.name = ""
-        self.rightsOwner = ""
-        self.price = 0
-        self.link = ""
-        self.releaseDate = ""
-    }
+  let name: String
+  let rightsOwner: String
+  let price: Double
+  let link: String
+  let releaseDate: String
+  
+  init(json: JSON) {
+    self.name = json["im:name"]["label"].stringValue
+    self.rightsOwner = json["rights"]["label"].stringValue
+    self.price = json["im:price"]["attributes"]["amount"].doubleValue
+    self.link = json["id"]["label"].stringValue
+    self.releaseDate = json["im:releaseDate"]["attributes"]["label"].stringValue
+  }
 }
