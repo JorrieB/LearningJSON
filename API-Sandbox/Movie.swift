@@ -26,4 +26,8 @@ struct Movie {
     self.imageLoc = json["im:image"][0]["label"].stringValue
   }
   
+  func isDisneyMovie() -> Bool {
+    return rightsOwner.containsString("Disney")
+  }
+  
 }

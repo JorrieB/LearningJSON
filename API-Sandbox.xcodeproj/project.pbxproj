@@ -17,6 +17,8 @@
 		BC7C84691D1D677800BA19ED /* Random-User.json in Resources */ = {isa = PBXBuildFile; fileRef = BC7C84671D1D677800BA19ED /* Random-User.json */; };
 		BC7C846B1D20C2B000BA19ED /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C846A1D20C2B000BA19ED /* Movie.swift */; };
 		BC7C846D1D20CEEB00BA19ED /* Challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7C846C1D20CEEB00BA19ED /* Challenges.swift */; };
+		CCEDED641D2A2AB800DD8088 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEDED631D2A2AB800DD8088 /* User.swift */; };
+		CCEDED661D2A3FB100DD8088 /* TestFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEDED651D2A3FB100DD8088 /* TestFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		BC7C846C1D20CEEB00BA19ED /* Challenges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Challenges.swift; sourceTree = "<group>"; };
 		C27B705B88ACEF3AA01739F8 /* Pods-API-Sandbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-API-Sandbox.release.xcconfig"; path = "Pods/Target Support Files/Pods-API-Sandbox/Pods-API-Sandbox.release.xcconfig"; sourceTree = "<group>"; };
 		C6B5D9918DBA7F38173FB419 /* Pods-API-Sandbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-API-Sandbox.debug.xcconfig"; path = "Pods/Target Support Files/Pods-API-Sandbox/Pods-API-Sandbox.debug.xcconfig"; sourceTree = "<group>"; };
+		CCEDED631D2A2AB800DD8088 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CCEDED651D2A3FB100DD8088 /* TestFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 				BC7C846C1D20CEEB00BA19ED /* Challenges.swift */,
 				BC7C846A1D20C2B000BA19ED /* Movie.swift */,
 				BC7C84551D1D488300BA19ED /* ViewController.swift */,
+				CCEDED651D2A3FB100DD8088 /* TestFile.swift */,
+				CCEDED631D2A2AB800DD8088 /* User.swift */,
 				BC7C84571D1D488300BA19ED /* Main.storyboard */,
 				BC7C845C1D1D488300BA19ED /* LaunchScreen.storyboard */,
 				BC7C84651D1D677800BA19ED /* JSON */,
@@ -235,6 +241,8 @@
 				BC7C84561D1D488300BA19ED /* ViewController.swift in Sources */,
 				BC7C846D1D20CEEB00BA19ED /* Challenges.swift in Sources */,
 				BC7C84541D1D488300BA19ED /* AppDelegate.swift in Sources */,
+				CCEDED661D2A3FB100DD8088 /* TestFile.swift in Sources */,
+				CCEDED641D2A2AB800DD8088 /* User.swift in Sources */,
 				BC7C846B1D20C2B000BA19ED /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

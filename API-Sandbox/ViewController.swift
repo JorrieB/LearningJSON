@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
-    //        exerciseOne()
+            exerciseOne()
     //        exerciseTwo()
     //        exerciseThree()
     
@@ -42,6 +42,9 @@ class ViewController: UIViewController {
           
           // Do what you need to with JSON here!
           // The rest is all boiler plate code you'll use for API requests
+          
+          print(json)
+          
           self.topMovies = json["feed"]["entry"].arrayValue.map {
             Movie(json: $0)
           }
